@@ -5,6 +5,78 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] — 2026-07-27
+
+### Added
+
+- Separate `src/styles/themes.css` — centralized CSS custom properties for light and dark themes
+- Comprehensive CSS variable system (40+ tokens) covering backgrounds, text, borders, inputs, buttons, badges, dividers, rings, and shadows
+
+### Changed
+
+- Migrated all UI components from Tailwind `dark:` classes to pure CSS variables — theme switching is instant with zero class toggling overhead
+- Theme toggle now reads/writes `<html>.dark` class only; no `dark:` variants needed in any component
+
+### Removed
+
+- All `dark:` Tailwind class modifiers across every component — themes are now CSS-var-driven
+- Unused CSS variables `--btn-secondary-hover-border` and `--btn-secondary-hover-text` from theme definitions
+- `.env.example` — no environment variables are consumed by the application
+- `pnpm-workspace.yaml` — stale config with incorrect pnpm 11 settings; replaced by `.npmrc`
+- "Keyboard Shortcuts" section from README — feature was documented but never implemented
+
+### Fixed
+
+- Zero FOUC on hard reload — inline script sets `.dark` before first paint, all colors come from CSS variables
+
+## [1.0.0] — 2026-07-27
+
+### Added
+
+- Professional empty-state card with document icon, title, and description
+- Loading spinner on Generate button during UUID generation
+
+### Changed
+
+- Standardized all button heights to 36px (h-9) with consistent padding and styling
+- Extended copy feedback timeout from 1.5s to 2s
+- Reduced UUID card vertical padding for tighter spacing
+- Improved UUID card hover effect with subtle active scale
+- Card entrance animation now uses staggered delay per row
+- Updated project version to 1.0.0
+
+### Fixed
+
+- Theme toggle hydration: ThemeProvider now syncs state from DOM after hydration, preventing inline script's dark class from being overwritten
+- Quantity input no longer displays leading zeros (e.g., "09" → "9")
+- `copySingle`, `copyAll`, `exportTxt`, `exportCsv` callbacks now have stable references using refs, eliminating cascading re-renders of all UUID cards on every generation
+- UUID card text now uses `break-all` to prevent overflow on small viewports
+
+### Performance
+
+- `copySingle` callback is now stable (empty deps) via ref pattern, preventing all UUID cards from re-rendering on each UUID array change
+- UUID cards use `useCallback` for the copy handler to maintain memoization
+
+### Accessibility
+
+- Added `aria-label` on Generate button (descriptive of current state)
+- Added `aria-label` on Clear button
+- Added `aria-live="polite"` to results count area
+
+### Added
+
+- Version 1.0.0 release — production-ready commercial release
+
+### Changed
+
+- Updated project version to 1.0.0
+- Updated all version references to 1.0.0
+- Cleaned up repository for final packaging
+
+### Security
+
+- Clarified security disclosure channel in SECURITY.md
+
 ## [0.5.0] — 2026-07-27
 
 ### Added

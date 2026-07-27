@@ -2,14 +2,14 @@
 
 Place the following assets in this directory before publishing on Codester:
 
-| Asset            | Format | Dimensions   | Description                             |
-|------------------|--------|--------------|-----------------------------------------|
-| `banner.png`     | PNG    | 1600 × 800   | Main listing banner                     |
-| `icon.png`       | PNG    | 200 × 200    | Application icon                        |
-| `logo.png`       | PNG    | —            | Product logo                            |
-| `screenshot-1.png` to `screenshot-5.png` | PNG | 1280 × 800 | Application screenshots              |
-| `demo.gif`       | GIF    | —            | Animated usage demo                     |
-| `feature-image.png` | PNG | —            | Feature highlight image                 |
+| Asset                                    | Format | Dimensions | Description             |
+| ---------------------------------------- | ------ | ---------- | ----------------------- |
+| `banner.png`                             | PNG    | 1600 × 800 | Main listing banner     |
+| `icon.png`                               | PNG    | 200 × 200  | Application icon        |
+| `logo.png`                               | PNG    | —          | Product logo            |
+| `screenshot-1.png` to `screenshot-5.png` | PNG    | 1280 × 800 | Application screenshots |
+| `demo.gif`                               | GIF    | —          | Animated usage demo     |
+| `feature-image.png`                      | PNG    | —          | Feature highlight image |
 
 ## Guidelines
 

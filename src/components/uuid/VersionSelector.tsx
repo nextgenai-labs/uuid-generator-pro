@@ -17,7 +17,10 @@ export const VersionSelector = memo(function VersionSelector({
 }: VersionSelectorProps) {
   return (
     <fieldset>
-      <legend className="mb-3 text-sm font-medium text-gray-700 dark:text-gray-300">
+      <legend
+        className="mb-3 text-sm font-medium"
+        style={{ color: "var(--text-secondary)" }}
+      >
         UUID Version
       </legend>
       <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="UUID Version">
@@ -26,11 +29,15 @@ export const VersionSelector = memo(function VersionSelector({
           return (
             <label
               key={v}
-              className={`cursor-pointer rounded-lg border px-4 py-2.5 text-sm font-medium transition-all duration-150 ease-in-out focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-1 ${
-                isSelected
-                  ? "border-blue-500 bg-blue-50 text-blue-700 shadow-sm dark:border-blue-400 dark:bg-blue-950 dark:text-blue-300"
-                  : "border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:hover:text-gray-200"
-              }`}
+              className="cursor-pointer rounded-lg border px-4 py-2.5 text-sm font-medium transition-all duration-150 ease-in-out focus-within:ring-2 focus-within:ring-offset-1"
+              style={{
+                backgroundColor: isSelected ? "var(--badge-bg)" : "var(--input-bg)",
+                borderColor: isSelected ? "var(--input-focus-border)" : "var(--input-border)",
+                color: isSelected ? "var(--badge-text)" : "var(--btn-secondary-text)",
+                boxShadow: isSelected ? "var(--card-shadow)" : "none",
+                "--tw-ring-color": "var(--ring-focus)",
+                "--tw-ring-offset-color": "var(--ring-offset)",
+              } as React.CSSProperties}
             >
               <input
                 type="radio"

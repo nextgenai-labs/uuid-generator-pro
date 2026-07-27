@@ -11,11 +11,13 @@ Customers who purchased UUID Generator Pro through Codester are eligible for sup
 **Response time:** Within 48 hours (business days)
 
 **Scope of support:**
+
 - Installation and setup assistance
 - Bug verification and reporting
 - Usage guidance
 
 **Out of scope:**
+
 - Custom development
 - Integration with third-party systems
 - Code modifications beyond the original product

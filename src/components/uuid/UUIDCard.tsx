@@ -1,6 +1,6 @@
 "use client";
 
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import { CopyButton } from "./CopyButton";
 
 interface UUIDCardProps {
@@ -10,10 +10,23 @@ interface UUIDCardProps {
 }
 
 export const UUIDCard = memo(function UUIDCard({ uuid, index, onCopy }: UUIDCardProps) {
+  const handleCopy = useCallback(() => onCopy(index), [onCopy, index]);
+
   return (
-    <div className="flex items-center justify-between rounded-lg border border-gray-200 bg-white px-4 py-3 transition-all duration-150 ease-in-out hover:border-gray-300 hover:shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:hover:border-gray-600">
-      <code className="select-all font-mono text-sm text-gray-900 dark:text-gray-100">{uuid}</code>
-      <CopyButton onClick={() => onCopy(index)} label="Copy UUID" />
+    <div
+      className="flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5 transition-all duration-150 ease-in-out active:scale-[0.99]"
+      style={{
+        backgroundColor: "var(--card-bg)",
+        borderColor: "var(--card-border)",
+      }}
+    >
+      <code
+        className="select-all break-all font-mono text-sm"
+        style={{ color: "var(--page-text)" }}
+      >
+        {uuid}
+      </code>
+      <CopyButton onClick={handleCopy} label="Copy UUID" />
     </div>
   );
 });

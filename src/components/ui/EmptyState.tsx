@@ -1,23 +1,33 @@
 export function EmptyState() {
   return (
-    <div className="flex flex-col items-center justify-center py-10 text-center sm:py-14">
-      <div className="mb-4 text-gray-400 dark:text-gray-500">
+    <div className="flex flex-col items-center justify-center py-14 text-center sm:py-20">
+      <div
+        className="mb-5 flex h-14 w-14 items-center justify-center rounded-full"
+        style={{
+          backgroundColor: "var(--btn-secondary-hover-bg)",
+          color: "var(--text-muted)",
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="h-12 w-12"
+          className="h-7 w-7"
           aria-hidden="true"
         >
-          <path d="M21 6.375c0 2.692-4.03 4.875-9 4.875S3 9.067 3 6.375 7.03 1.5 12 1.5s9 2.183 9 4.875z" />
-          <path d="M12 12.75c2.685 0 5.19-.586 7.078-1.609a8.283 8.283 0 001.897-1.384c.016.121.025.244.025.368C21 12.817 16.97 15 12 15s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.285 8.285 0 001.897 1.384C6.81 12.164 9.315 12.75 12 12.75z" />
-          <path d="M12 16.5c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 001.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 001.897 1.384C6.81 15.914 9.315 16.5 12 16.5z" />
-          <path d="M12 20.25c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 001.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 001.897 1.384C6.81 19.664 9.315 20.25 12 20.25z" />
+          <path
+            fillRule="evenodd"
+            d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625zM7.5 15a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 017.5 15zm.75 2.25a.75.75 0 000 1.5h5.5a.75.75 0 000-1.5h-5.5z"
+            clipRule="evenodd"
+          />
+          <path d="M12.971 1.816A5.25 5.25 0 0114.25 5.25v1.875c0 .207.168.375.375.375h1.875a5.25 5.25 0 013.434 1.279 9.708 9.708 0 00-6.963-6.963z" />
         </svg>
       </div>
-      <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100">No UUIDs generated</h3>
-      <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-        Select a version and quantity, then click Generate.
+      <h3 className="text-base font-semibold" style={{ color: "var(--page-text)" }}>
+        No UUIDs Generated
+      </h3>
+      <p className="mt-1.5 max-w-xs text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
+        Select a UUID version, choose a quantity, then click Generate.
       </p>
     </div>
   );

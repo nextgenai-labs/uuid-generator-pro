@@ -10,15 +10,15 @@
 - **Bulk generation** — Generate 1–100 UUIDs in a single click
 - **Export to TXT / CSV** — Download results with date-based filenames
 - **Clipboard integration** — Copy single or all UUIDs with success feedback
-- **Dark mode** — Light and dark themes with system preference detection
+- **Dark mode** — Light and dark themes with system preference detection and zero FOUC
 - **Responsive design** — Optimized for mobile, tablet, and desktop
-- **Keyboard accessible** — Full keyboard navigation with visible focus indicators
+- **Keyboard accessible** — Full keyboard navigation with visible focus rings
 - **Rapid-click protection** — Built-in guard against duplicate generation
 
 ## Requirements
 
 | Dependency | Minimum Version |
-|------------|-----------------|
+| ---------- | --------------- |
 | Node.js    | 20.x            |
 | pnpm       | 9.x             |
 
@@ -45,7 +45,7 @@ See [INSTALL.md](./INSTALL.md) for full setup instructions.
 ## Supported UUID Versions
 
 | Version | Description                   | Library Support |
-|---------|-------------------------------|-----------------|
+| ------- | ----------------------------- | --------------- |
 | v1      | Time-based (MAC + timestamp)  | ✓               |
 | v4      | Random                        | ✓               |
 | v7      | Unix Epoch timestamp + random | ✓               |
@@ -54,19 +54,12 @@ All versions are provided by the [uuid](https://www.npmjs.com/package/uuid) pack
 
 ## Export Formats
 
-| Format | Extension | Content                        |
-|--------|-----------|--------------------------------|
-| TXT    | `.txt`    | One UUID per line              |
+| Format | Extension | Content                          |
+| ------ | --------- | -------------------------------- |
+| TXT    | `.txt`    | One UUID per line                |
 | CSV    | `.csv`    | Header row `UUID` + one per line |
 
 Filenames follow the pattern `uuids-YYYY-MM-DD.{ext}`.
-
-## Keyboard Shortcuts
-
-| Action          | Shortcut        |
-|-----------------|-----------------|
-| Generate UUIDs  | `Ctrl+Enter`    |
-| Clear results   | `Ctrl+Shift+C` (when results present) |
 
 ## Project Structure
 
@@ -81,6 +74,7 @@ uuid-generator-pro/
 │   ├── config/              # Application configuration
 │   ├── hooks/               # Custom React hooks
 │   ├── lib/                 # Core libraries and theme
+│   ├── styles/              # CSS theme variables (light + dark)
 │   └── utils/               # Utility functions (clipboard, export)
 ├── docs/
 │   └── marketplace/         # Marketplace listing assets
@@ -95,7 +89,7 @@ uuid-generator-pro/
 ## Browser Support
 
 | Browser          | Supported |
-|------------------|-----------|
+| ---------------- | --------- |
 | Chrome (latest)  | ✓         |
 | Firefox (latest) | ✓         |
 | Safari (latest)  | ✓         |
@@ -120,5 +114,5 @@ See [SUPPORT.md](./SUPPORT.md) for support options.
 ---
 
 **Company:** NextGenAI Labs  
-**Version:** 0.5.0  
+**Version:** 1.0.0  
 **Marketplace:** [Codester](https://www.codester.com)

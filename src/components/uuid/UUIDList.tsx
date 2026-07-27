@@ -16,7 +16,12 @@ export const UUIDList = memo(function UUIDList({ uuids, onCopySingle }: UUIDList
   return (
     <div className="space-y-2" role="list" aria-label="Generated UUIDs">
       {uuids.map((uuid, index) => (
-        <div key={`${uuid}-${index}`} role="listitem" className="animate-fade-in">
+        <div
+          key={`${uuid}-${index}`}
+          role="listitem"
+          className="animate-fade-in"
+          style={{ animationDelay: `${index * 15}ms` }}
+        >
           <UUIDCard uuid={uuid} index={index} onCopy={onCopySingle} />
         </div>
       ))}

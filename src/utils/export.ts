@@ -23,7 +23,6 @@ export function exportTxt(uuids: string[]): void {
 
 export function exportCsv(uuids: string[]): void {
   const header = "UUID";
-  const rows = uuids.map((uuid) => uuid);
-  const content = [header, ...rows].join("\n");
+  const content = [header, ...uuids].join("\n");
   downloadFile(content, formatFilename("csv"), "text/csv");
 }

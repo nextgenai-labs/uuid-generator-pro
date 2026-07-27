@@ -1,0 +1,95 @@
+:root {
+  --page-bg: #f9fafb;
+  --page-text: #111827;
+
+  --header-bg: #ffffff;
+  --header-border: #e5e7eb;
+
+  --footer-bg: #ffffff;
+  --footer-border: #e5e7eb;
+  --footer-text: #6b7280;
+
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --card-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+
+  --input-bg: #ffffff;
+  --input-border: #e5e7eb;
+  --input-text: #111827;
+  --input-focus-border: #3b82f6;
+  --input-focus-ring: #3b82f6;
+  --input-error-border: #f87171;
+  --input-error-ring: #f87171;
+  --input-error-text: #dc2626;
+
+  --badge-bg: #dbeafe;
+  --badge-text: #1d4ed8;
+
+  --btn-primary-bg: #2563eb;
+  --btn-primary-hover: #1d4ed8;
+  --btn-primary-text: #ffffff;
+
+  --btn-secondary-bg: #ffffff;
+  --btn-secondary-border: #e5e7eb;
+  --btn-secondary-text: #374151;
+  --btn-secondary-hover-bg: #f9fafb;
+
+  --btn-copied-bg: #f0fdf4;
+  --btn-copied-text: #15803d;
+
+  --text-muted: #6b7280;
+  --text-secondary: #4b5563;
+
+  --divider: #f3f4f6;
+
+  --ring-focus: #3b82f6;
+  --ring-offset: #ffffff;
+}
+
+.dark {
+  --page-bg: #030712;
+  --page-text: #f3f4f6;
+
+  --header-bg: #111827;
+  --header-border: #1f2937;
+
+  --footer-bg: #111827;
+  --footer-border: #1f2937;
+  --footer-text: #6b7280;
+
+  --card-bg: #111827;
+  --card-border: #1f2937;
+  --card-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+
+  --input-bg: #1f2937;
+  --input-border: #374151;
+  --input-text: #f3f4f6;
+  --input-focus-border: #3b82f6;
+  --input-focus-ring: #3b82f6;
+  --input-error-border: #ef4444;
+  --input-error-ring: #ef4444;
+  --input-error-text: #f87171;
+
+  --badge-bg: #1e3a5f;
+  --badge-text: #93c5fd;
+
+  --btn-primary-bg: #2563eb;
+  --btn-primary-hover: #1d4ed8;
+  --btn-primary-text: #ffffff;
+
+  --btn-secondary-bg: #1f2937;
+  --btn-secondary-border: #374151;
+  --btn-secondary-text: #d1d5db;
+  --btn-secondary-hover-bg: #374151;
+
+  --btn-copied-bg: #052e16;
+  --btn-copied-text: #4ade80;
+
+  --text-muted: #9ca3af;
+  --text-secondary: #9ca3af;
+
+  --divider: #1f2937;
+
+  --ring-focus: #3b82f6;
+  --ring-offset: #111827;
+}

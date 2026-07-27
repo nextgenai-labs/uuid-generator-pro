@@ -24,7 +24,7 @@ Whether you are a developer creating test data, a QA engineer populating databas
 - **Bulk generation** — Up to 100 UUIDs at once
 - **Export to TXT/CSV** — Download results with date-based filenames
 - **Clipboard integration** — Copy individual UUIDs or all at once
-- **Dark mode** — Built-in light/dark theme with system preference detection
+- **Dark mode** — Built-in light/dark theme with system preference detection and zero FOUC
 - **Responsive** — Works on desktop, tablet, and mobile
 - **Keyboard accessible** — Full keyboard navigation
 - **No external dependencies** — Runs entirely in the browser after loading
