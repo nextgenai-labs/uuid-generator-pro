@@ -1,7 +1,7 @@
 export function EmptyState() {
   return (
     <div className="flex flex-col items-center justify-center py-10 text-center sm:py-14">
-      <div className="mb-4 text-gray-300 dark:text-gray-600">
+      <div className="mb-4 text-gray-400 dark:text-gray-500">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
