@@ -15,7 +15,6 @@
 
 - All `dark:` Tailwind class modifiers — themes are fully CSS-var-driven
 - `.env.example` (no env vars used)
-- `pnpm-workspace.yaml` (stale config with incorrect pnpm 11 settings; replaced by `.npmrc`)
 - Keyboard shortcuts section from README (feature was never implemented)
 
 ## Version 1.0.0 — 2026-07-27

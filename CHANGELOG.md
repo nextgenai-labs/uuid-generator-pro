@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - All `dark:` Tailwind class modifiers across every component — themes are now CSS-var-driven
 - Unused CSS variables `--btn-secondary-hover-border` and `--btn-secondary-hover-text` from theme definitions
 - `.env.example` — no environment variables are consumed by the application
-- `pnpm-workspace.yaml` — stale config with incorrect pnpm 11 settings; replaced by `.npmrc`
+- `.npmrc` — replaced by `pnpm-workspace.yaml` with proper `allowBuilds` and `overrides` config
 - "Keyboard Shortcuts" section from README — feature was documented but never implemented
 
 ### Fixed

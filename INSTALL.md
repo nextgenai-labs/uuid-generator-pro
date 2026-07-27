@@ -12,10 +12,19 @@ node --version
 pnpm --version
 ```
 
-## Clone
+## Clone or Extract
+
+### From Git
 
 ```bash
 git clone https://github.com/nextgenai-labs/uuid-generator-pro.git
+cd uuid-generator-pro
+```
+
+### From Codester ZIP
+
+```bash
+unzip uuid-generator-pro.zip
 cd uuid-generator-pro
 ```
 
@@ -45,31 +54,28 @@ Output is written to the `.next` directory. Preview the production build locally
 pnpm start
 ```
 
-## Lint
-
-```bash
-pnpm lint
-```
-
-Runs ESLint across the codebase.
-
-## Format
-
-```bash
-pnpm format
-```
-
-Formats all source files with Prettier.
-
-## All Commands
+## Available Commands
 
 | Command       | Description               |
-| ------------- | ------------------------- |
+|---------------|---------------------------|
 | `pnpm dev`    | Start development server  |
 | `pnpm build`  | Create production build   |
 | `pnpm start`  | Start production server   |
 | `pnpm lint`   | Run ESLint                |
 | `pnpm format` | Format code with Prettier |
+
+## Deploy to Vercel
+
+UUID Generator Pro can be deployed to Vercel with zero configuration:
+
+1. Push the repository to GitHub, GitLab, or Bitbucket
+2. Import the project in Vercel
+3. Vercel auto-detects Next.js — no configuration needed
+4. Click Deploy
+
+No environment variables are required.
+
+See [docs/marketplace/demo.md](./docs/marketplace/demo.md) for detailed deployment instructions.
 
 ## Troubleshooting
 
@@ -102,3 +108,7 @@ Specify a different port:
 ```bash
 pnpm dev -- --port 3001
 ```
+
+## Support
+
+See [SUPPORT.md](./SUPPORT.md) or open an issue on the [GitHub repository](https://github.com/nextgenai-labs/uuid-generator-pro/issues).
