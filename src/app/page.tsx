@@ -4,7 +4,7 @@ import { Footer } from "@/components/ui/Footer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col" style={{ backgroundColor: "var(--page-bg)" }}>
+    <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">

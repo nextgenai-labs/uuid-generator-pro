@@ -10,13 +10,12 @@
 ### Changed
 
 - All components migrated from Tailwind `dark:` classes to pure CSS variables for instant, no-FOUC theme switching
-- `pnpm-workspace.yaml` inlined into `package.json` — single-package project simplification
 
 ### Removed
 
 - All `dark:` Tailwind class modifiers — themes are fully CSS-var-driven
 - `.env.example` (no env vars used)
-- `pnpm-workspace.yaml` (single-package project, not needed with pnpm 11)
+- `pnpm-workspace.yaml` (stale config with incorrect pnpm 11 settings; replaced by `.npmrc`)
 - Keyboard shortcuts section from README (feature was never implemented)
 
 ## Version 1.0.0 — 2026-07-27

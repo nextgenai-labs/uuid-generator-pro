@@ -16,14 +16,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Migrated all UI components from Tailwind `dark:` classes to pure CSS variables — theme switching is instant with zero class toggling overhead
 - Theme toggle now reads/writes `<html>.dark` class only; no `dark:` variants needed in any component
-- Inlined `pnpm-workspace.yaml` settings into `package.json` under `"pnpm"` key — removed redundant workspace file
 
 ### Removed
 
 - All `dark:` Tailwind class modifiers across every component — themes are now CSS-var-driven
 - Unused CSS variables `--btn-secondary-hover-border` and `--btn-secondary-hover-text` from theme definitions
 - `.env.example` — no environment variables are consumed by the application
-- `pnpm-workspace.yaml` — single-package project, no longer needed with pnpm 11
+- `pnpm-workspace.yaml` — stale config with incorrect pnpm 11 settings; replaced by `.npmrc`
 - "Keyboard Shortcuts" section from README — feature was documented but never implemented
 
 ### Fixed

@@ -53,8 +53,8 @@ function GenerateButton({
         "--tw-ring-color": "var(--ring-focus)",
         "--tw-ring-offset-color": "var(--ring-offset)",
       } as React.CSSProperties}
-      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "var(--btn-primary-hover)"; }}
-      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "var(--btn-primary-bg)"; }}
+      onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--btn-primary-hover)"; }}
+      onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "var(--btn-primary-bg)"; }}
     >
       {generating ? (
         <>
