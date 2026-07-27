@@ -1,5 +1,31 @@
 # Changelog
 
+## 0.3.0 (Unreleased)
+
+### Added
+
+- Dark mode with system preference detection and manual theme toggle
+- Theme persistence using localStorage
+- Professional header with title and version badge
+- Card container for generator controls
+- Empty state UI when no UUIDs are generated
+- Smooth fade-in animations on generated UUIDs
+- Inline SVG icons for theme toggle
+- `animate-fade-in` utility animation
+
+### Changed
+
+- Refactored page layout with Header, main content, and Footer components
+- Replaced media query dark mode with class-based `.dark` toggle
+- Upgraded root layout with `suppressHydrationWarning` and inline theme script
+- Improved VersionSelector with hover states and focus ring
+- Improved QuantityInput with error styling and focus ring
+- Improved CopyButton with green success state and focus ring
+- Improved UUIDCard with hover effect and shadow
+- Improved UUIDList with fade-in animation per item
+- Updated all buttons with consistent rounded-lg and transition durations
+- Updated project version to 0.3.0
+
 ## 0.2.0 (Unreleased)
 
 ### Added

@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import { UUIDCard } from "./UUIDCard";
 
 interface UUIDListProps {
@@ -7,7 +8,7 @@ interface UUIDListProps {
   onCopySingle: (index: number) => Promise<boolean>;
 }
 
-export function UUIDList({ uuids, onCopySingle }: UUIDListProps) {
+export const UUIDList = memo(function UUIDList({ uuids, onCopySingle }: UUIDListProps) {
   if (uuids.length === 0) {
     return null;
   }
@@ -15,10 +16,10 @@ export function UUIDList({ uuids, onCopySingle }: UUIDListProps) {
   return (
     <div className="space-y-2" role="list" aria-label="Generated UUIDs">
       {uuids.map((uuid, index) => (
-        <div key={`${uuid}-${index}`} role="listitem">
+        <div key={`${uuid}-${index}`} role="listitem" className="animate-fade-in">
           <UUIDCard uuid={uuid} index={index} onCopy={onCopySingle} />
         </div>
       ))}
     </div>
   );
-}
+});

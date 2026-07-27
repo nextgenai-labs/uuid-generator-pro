@@ -13,6 +13,10 @@ A fast, modern, and customizable UUID Generator built with Next.js and TypeScrip
 - **Copy individual UUID** — Copy a single UUID to your clipboard
 - **Copy all UUIDs** — Copy all generated UUIDs at once (newline-separated)
 - **Real-time quantity validation** — Validates input range before generation
+- **Dark mode** — Light and dark theme with system preference detection and manual toggle
+- **Responsive design** — Optimized for mobile, tablet, desktop, and large screens
+- **Keyboard accessible** — Full keyboard navigation with visible focus indicators
+- **Polished UI** — Smooth transitions, hover effects, professional color palette
 
 ## Tech Stack
 
@@ -37,6 +41,10 @@ See [INSTALL.md](./INSTALL.md) for setup instructions.
 | v7      | Unix Epoch timestamp + random | ✓               |
 
 All versions are provided by the [uuid](https://www.npmjs.com/package/uuid) package (RFC 9562).
+
+## Theme
+
+The application supports light and dark themes. It respects the system preference on first load and persists the user's choice in localStorage. Toggle the theme using the sun/moon icon in the header.
 
 ## License
 
