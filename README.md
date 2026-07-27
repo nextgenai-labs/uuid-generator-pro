@@ -4,9 +4,15 @@ A fast, modern, and customizable UUID Generator built with Next.js and TypeScrip
 
 ---
 
-**Current Status:** Project Foundation (v0.1.0)
+## Current Features
 
-This is the initial project foundation. No UUID generation features have been implemented yet.
+- **UUID v1** — Time-based UUID generation
+- **UUID v4** — Random UUID generation
+- **UUID v7** — Unix Epoch timestamp + random UUID generation
+- **Bulk generation** — Generate 1–100 UUIDs at once
+- **Copy individual UUID** — Copy a single UUID to your clipboard
+- **Copy all UUIDs** — Copy all generated UUIDs at once (newline-separated)
+- **Real-time quantity validation** — Validates input range before generation
 
 ## Tech Stack
 
@@ -14,12 +20,23 @@ This is the initial project foundation. No UUID generation features have been im
 - **React** — UI library
 - **TypeScript** — Type-safe JavaScript
 - **Tailwind CSS** — Utility-first styling
+- **uuid** — RFC 9562 UUID library
 - **ESLint** — Code quality
 - **Prettier** — Code formatting
 
 ## Getting Started
 
 See [INSTALL.md](./INSTALL.md) for setup instructions.
+
+## Supported UUID Versions
+
+| Version | Description                   | Library Support |
+| ------- | ----------------------------- | --------------- |
+| v1      | Time-based (MAC + timestamp)  | ✓               |
+| v4      | Random                        | ✓               |
+| v7      | Unix Epoch timestamp + random | ✓               |
+
+All versions are provided by the [uuid](https://www.npmjs.com/package/uuid) package (RFC 9562).
 
 ## License
 
