@@ -21,6 +21,8 @@ export interface UseUuidGeneratorReturn {
   exportCsv: () => void;
 }
 
+const GENERATE_THROTTLE_MS = 200;
+
 export function useUuidGenerator(): UseUuidGeneratorReturn {
   const [version, setVersion] = useState<UuidVersion>("v4");
   const [quantity, setQuantity] = useState(1);
@@ -62,7 +64,7 @@ export function useUuidGenerator(): UseUuidGeneratorReturn {
 
     setTimeout(() => {
       generating.current = false;
-    }, 200);
+    }, GENERATE_THROTTLE_MS);
   }, [quantity, version]);
 
   const clear = useCallback(() => {
