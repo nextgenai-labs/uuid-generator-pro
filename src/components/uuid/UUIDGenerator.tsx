@@ -29,11 +29,7 @@ export function UUIDGenerator() {
         <VersionSelector value={version} onChange={setVersion} />
 
         <div className="flex flex-wrap items-end gap-4">
-          <QuantityInput
-            value={quantity}
-            onChange={setQuantity}
-            error={error && quantity > 0 ? error : null}
-          />
+          <QuantityInput value={quantity} onChange={setQuantity} error={error} />
         </div>
 
         <div className="flex flex-wrap gap-3">

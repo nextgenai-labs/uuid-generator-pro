@@ -5,7 +5,7 @@ import { CopyButton } from "./CopyButton";
 interface UUIDCardProps {
   uuid: string;
   index: number;
-  onCopy: (index: number) => Promise<void>;
+  onCopy: (index: number) => Promise<boolean>;
 }
 
 export function UUIDCard({ uuid, index, onCopy }: UUIDCardProps) {

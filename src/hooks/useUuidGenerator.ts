@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import type { UuidVersion } from "@/lib/uuid";
-import { generateUuids } from "@/lib/uuid";
+import { generateUuids, MIN_QUANTITY, MAX_QUANTITY } from "@/lib/uuid";
 import { copyToClipboard } from "@/utils/clipboard";
 
 export interface UseUuidGeneratorReturn {
@@ -10,24 +10,19 @@ export interface UseUuidGeneratorReturn {
   quantity: number;
   uuids: string[];
   error: string | null;
-  copiedIndex: number | null;
   setVersion: (version: UuidVersion) => void;
   setQuantity: (quantity: number) => void;
   generate: () => void;
   clear: () => void;
-  copySingle: (index: number) => Promise<void>;
-  copyAll: () => Promise<void>;
+  copySingle: (index: number) => Promise<boolean>;
+  copyAll: () => Promise<boolean>;
 }
-
-const MIN_QUANTITY = 1;
-const MAX_QUANTITY = 100;
 
 export function useUuidGenerator(): UseUuidGeneratorReturn {
   const [version, setVersion] = useState<UuidVersion>("v4");
   const [quantity, setQuantity] = useState(1);
   const [uuids, setUuids] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
   function validateQuantity(value: number): string | null {
     if (!Number.isInteger(value) || value < MIN_QUANTITY || value > MAX_QUANTITY) {
@@ -53,7 +48,6 @@ export function useUuidGenerator(): UseUuidGeneratorReturn {
     try {
       const generated = generateUuids(version, quantity);
       setUuids(generated);
-      setCopiedIndex(null);
     } catch {
       setError("Failed to generate UUIDs. Please try again.");
     }
@@ -62,34 +56,23 @@ export function useUuidGenerator(): UseUuidGeneratorReturn {
   const clear = useCallback(() => {
     setUuids([]);
     setError(null);
-    setCopiedIndex(null);
   }, []);
 
   const copySingle = useCallback(
-    async (index: number) => {
+    async (index: number): Promise<boolean> => {
       const uuid = uuids[index];
-      if (!uuid) return;
+      if (!uuid) return false;
 
-      const success = await copyToClipboard(uuid);
-      if (success) {
-        setCopiedIndex(index);
-      } else {
-        setError("Failed to copy to clipboard.");
-      }
+      return copyToClipboard(uuid);
     },
     [uuids],
   );
 
-  const copyAll = useCallback(async () => {
-    if (uuids.length === 0) return;
+  const copyAll = useCallback(async (): Promise<boolean> => {
+    if (uuids.length === 0) return false;
 
     const text = uuids.join("\n");
-    const success = await copyToClipboard(text);
-    if (success) {
-      setCopiedIndex(-1);
-    } else {
-      setError("Failed to copy to clipboard.");
-    }
+    return copyToClipboard(text);
   }, [uuids]);
 
   return {
@@ -97,7 +80,6 @@ export function useUuidGenerator(): UseUuidGeneratorReturn {
     quantity,
     uuids,
     error,
-    copiedIndex,
     setVersion,
     setQuantity: handleSetQuantity,
     generate,

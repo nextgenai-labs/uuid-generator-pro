@@ -8,6 +8,9 @@ export const UUID_VERSION_LABELS: Record<UuidVersion, string> = {
   v7: "Version 7 (Unix Epoch + Random)",
 };
 
+export const MIN_QUANTITY = 1;
+export const MAX_QUANTITY = 100;
+
 export function generateUuid(version: UuidVersion): string {
   switch (version) {
     case "v1":

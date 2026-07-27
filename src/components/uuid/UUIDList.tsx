@@ -4,7 +4,7 @@ import { UUIDCard } from "./UUIDCard";
 
 interface UUIDListProps {
   uuids: string[];
-  onCopySingle: (index: number) => Promise<void>;
+  onCopySingle: (index: number) => Promise<boolean>;
 }
 
 export function UUIDList({ uuids, onCopySingle }: UUIDListProps) {

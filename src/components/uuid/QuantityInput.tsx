@@ -1,5 +1,7 @@
 "use client";
 
+import { MIN_QUANTITY, MAX_QUANTITY } from "@/lib/uuid";
+
 interface QuantityInputProps {
   value: number;
   onChange: (value: number) => void;
@@ -15,8 +17,8 @@ export function QuantityInput({ value, onChange, error }: QuantityInputProps) {
       <input
         id="uuid-quantity"
         type="number"
-        min={1}
-        max={100}
+        min={MIN_QUANTITY}
+        max={MAX_QUANTITY}
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
         aria-describedby={error ? "quantity-error" : undefined}

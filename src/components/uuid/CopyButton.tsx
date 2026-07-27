@@ -1,20 +1,40 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 interface CopyButtonProps {
-  onClick: () => Promise<void>;
+  onClick: () => Promise<boolean>;
   label?: string;
 }
 
 export function CopyButton({ onClick, label = "Copy" }: CopyButtonProps) {
   const [copied, setCopied] = useState(false);
+  const timeoutRef = useRef<number | null>(null);
 
   const handleClick = useCallback(async () => {
-    await onClick();
+    const success = await onClick();
+
+    if (!success) return;
+
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+
+    if (timeoutRef.current !== null) {
+      window.clearTimeout(timeoutRef.current);
+    }
+
+    timeoutRef.current = window.setTimeout(() => {
+      setCopied(false);
+      timeoutRef.current = null;
+    }, 1500);
   }, [onClick]);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current !== null) {
+        window.clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <button
