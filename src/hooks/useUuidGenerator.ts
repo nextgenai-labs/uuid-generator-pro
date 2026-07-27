@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import type { UuidVersion } from "@/lib/uuid";
 import { generateUuids, MIN_QUANTITY, MAX_QUANTITY } from "@/lib/uuid";
 import { copyToClipboard } from "@/utils/clipboard";
+import { exportTxt as doExportTxt, exportCsv as doExportCsv } from "@/utils/export";
 
 export interface UseUuidGeneratorReturn {
   version: UuidVersion;
@@ -16,13 +17,18 @@ export interface UseUuidGeneratorReturn {
   clear: () => void;
   copySingle: (index: number) => Promise<boolean>;
   copyAll: () => Promise<boolean>;
+  exportTxt: () => void;
+  exportCsv: () => void;
 }
+
+const GENERATE_THROTTLE_MS = 200;
 
 export function useUuidGenerator(): UseUuidGeneratorReturn {
   const [version, setVersion] = useState<UuidVersion>("v4");
   const [quantity, setQuantity] = useState(1);
   const [uuids, setUuids] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const generating = useRef(false);
 
   function validateQuantity(value: number): string | null {
     if (!Number.isInteger(value) || value < MIN_QUANTITY || value > MAX_QUANTITY) {
@@ -37,9 +43,13 @@ export function useUuidGenerator(): UseUuidGeneratorReturn {
   }, []);
 
   const generate = useCallback(() => {
+    if (generating.current) return;
+    generating.current = true;
+
     const validationError = validateQuantity(quantity);
     if (validationError) {
       setError(validationError);
+      generating.current = false;
       return;
     }
 
@@ -51,6 +61,10 @@ export function useUuidGenerator(): UseUuidGeneratorReturn {
     } catch {
       setError("Failed to generate UUIDs. Please try again.");
     }
+
+    setTimeout(() => {
+      generating.current = false;
+    }, GENERATE_THROTTLE_MS);
   }, [quantity, version]);
 
   const clear = useCallback(() => {
@@ -75,6 +89,16 @@ export function useUuidGenerator(): UseUuidGeneratorReturn {
     return copyToClipboard(text);
   }, [uuids]);
 
+  const exportTxt = useCallback(() => {
+    if (uuids.length === 0) return;
+    doExportTxt(uuids);
+  }, [uuids]);
+
+  const exportCsv = useCallback(() => {
+    if (uuids.length === 0) return;
+    doExportCsv(uuids);
+  }, [uuids]);
+
   return {
     version,
     quantity,
@@ -86,5 +110,7 @@ export function useUuidGenerator(): UseUuidGeneratorReturn {
     clear,
     copySingle,
     copyAll,
+    exportTxt,
+    exportCsv,
   };
 }
