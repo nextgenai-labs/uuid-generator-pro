@@ -1,5 +1,32 @@
 # Release Notes
 
+## Version 1.0.1 — 2026-07-27
+
+### Added
+
+- Centralized CSS custom property theme system (`src/styles/themes.css`) with 40+ tokens for light and dark modes
+- Comprehensive CSS variable system covering backgrounds, text, borders, inputs, buttons, badges, dividers, rings, and shadows
+
+### Changed
+
+- All components migrated from Tailwind `dark:` classes to pure CSS variables for instant, no-FOUC theme switching
+- `pnpm-workspace.yaml` inlined into `package.json` — single-package project simplification
+
+### Removed
+
+- All `dark:` Tailwind class modifiers — themes are fully CSS-var-driven
+- `.env.example` (no env vars used)
+- `pnpm-workspace.yaml` (single-package project, not needed with pnpm 11)
+- Keyboard shortcuts section from README (feature was never implemented)
+
+## Version 1.0.0 — 2026-07-27
+
+### Added
+
+- Production-ready commercial release
+- Final quality audit and repository cleanup
+- Version 1.0.0 stabilization
+
 ## Version 0.5.0 — 2026-07-27
 
 ### Added

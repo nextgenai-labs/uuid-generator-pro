@@ -23,8 +23,8 @@
 
 ## User Interface
 
-- **Light and dark themes** — Manual toggle with system preference detection
-- **Theme persistence** — Choice saved to localStorage
+- **Light and dark themes** — Manual toggle with system preference detection, zero FOUC, and instant CSS-var-based switching
+- **Theme persistence** — Choice saved to localStorage, restored before first paint
 - **Responsive layout** — Optimized for mobile, tablet, desktop, and large screens
 - **Empty state** — Clear guidance when no UUIDs have been generated
 - **Fade-in animations** — Smooth transitions for generated results

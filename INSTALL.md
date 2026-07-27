@@ -63,13 +63,13 @@ Formats all source files with Prettier.
 
 ## All Commands
 
-| Command           | Description                        |
-|-------------------|------------------------------------|
-| `pnpm dev`        | Start development server           |
-| `pnpm build`      | Create production build            |
-| `pnpm start`      | Start production server            |
-| `pnpm lint`       | Run ESLint                         |
-| `pnpm format`     | Format code with Prettier          |
+| Command       | Description               |
+| ------------- | ------------------------- |
+| `pnpm dev`    | Start development server  |
+| `pnpm build`  | Create production build   |
+| `pnpm start`  | Start production server   |
+| `pnpm lint`   | Run ESLint                |
+| `pnpm format` | Format code with Prettier |
 
 ## Troubleshooting
 

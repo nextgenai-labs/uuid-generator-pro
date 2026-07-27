@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import type { UuidVersion } from "@/lib/uuid";
 import { generateUuids, MIN_QUANTITY, MAX_QUANTITY } from "@/lib/uuid";
 import { copyToClipboard } from "@/utils/clipboard";
@@ -11,6 +11,7 @@ export interface UseUuidGeneratorReturn {
   quantity: number;
   uuids: string[];
   error: string | null;
+  generating: boolean;
   setVersion: (version: UuidVersion) => void;
   setQuantity: (quantity: number) => void;
   generate: () => void;
@@ -28,7 +29,13 @@ export function useUuidGenerator(): UseUuidGeneratorReturn {
   const [quantity, setQuantity] = useState(1);
   const [uuids, setUuids] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const generating = useRef(false);
+  const [generating, setGenerating] = useState(false);
+  const generatingRef = useRef(false);
+  const uuidsRef = useRef(uuids);
+
+  useEffect(() => {
+    uuidsRef.current = uuids;
+  }, [uuids]);
 
   function validateQuantity(value: number): string | null {
     if (!Number.isInteger(value) || value < MIN_QUANTITY || value > MAX_QUANTITY) {
@@ -43,13 +50,15 @@ export function useUuidGenerator(): UseUuidGeneratorReturn {
   }, []);
 
   const generate = useCallback(() => {
-    if (generating.current) return;
-    generating.current = true;
+    if (generatingRef.current) return;
+    generatingRef.current = true;
+    setGenerating(true);
 
     const validationError = validateQuantity(quantity);
     if (validationError) {
       setError(validationError);
-      generating.current = false;
+      generatingRef.current = false;
+      setGenerating(false);
       return;
     }
 
@@ -63,7 +72,8 @@ export function useUuidGenerator(): UseUuidGeneratorReturn {
     }
 
     setTimeout(() => {
-      generating.current = false;
+      generatingRef.current = false;
+      setGenerating(false);
     }, GENERATE_THROTTLE_MS);
   }, [quantity, version]);
 
@@ -72,38 +82,36 @@ export function useUuidGenerator(): UseUuidGeneratorReturn {
     setError(null);
   }, []);
 
-  const copySingle = useCallback(
-    async (index: number): Promise<boolean> => {
-      const uuid = uuids[index];
-      if (!uuid) return false;
-
-      return copyToClipboard(uuid);
-    },
-    [uuids],
-  );
+  const copySingle = useCallback(async (index: number): Promise<boolean> => {
+    const uuid = uuidsRef.current[index];
+    if (!uuid) return false;
+    return copyToClipboard(uuid);
+  }, []);
 
   const copyAll = useCallback(async (): Promise<boolean> => {
-    if (uuids.length === 0) return false;
-
-    const text = uuids.join("\n");
-    return copyToClipboard(text);
-  }, [uuids]);
+    const current = uuidsRef.current;
+    if (current.length === 0) return false;
+    return copyToClipboard(current.join("\n"));
+  }, []);
 
   const exportTxt = useCallback(() => {
-    if (uuids.length === 0) return;
-    doExportTxt(uuids);
-  }, [uuids]);
+    const current = uuidsRef.current;
+    if (current.length === 0) return;
+    doExportTxt(current);
+  }, []);
 
   const exportCsv = useCallback(() => {
-    if (uuids.length === 0) return;
-    doExportCsv(uuids);
-  }, [uuids]);
+    const current = uuidsRef.current;
+    if (current.length === 0) return;
+    doExportCsv(current);
+  }, []);
 
   return {
     version,
     quantity,
     uuids,
     error,
+    generating,
     setVersion,
     setQuantity: handleSetQuantity,
     generate,

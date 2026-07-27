@@ -5,6 +5,7 @@
 If you purchased UUID Generator Pro on Codester, you are entitled to support through the Codester purchase page.
 
 **What is covered:**
+
 - Installation and setup assistance
 - Bug verification
 - Usage questions
@@ -12,6 +13,7 @@ If you purchased UUID Generator Pro on Codester, you are entitled to support thr
 **Response time:** Within 48 hours (business days)
 
 **How to request support:**
+
 1. Log in to your Codester account.
 2. Go to your purchases page.
 3. Find UUID Generator Pro and click "Contact Author."

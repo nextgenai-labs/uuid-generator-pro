@@ -27,9 +27,9 @@ UUID Generator Pro can be deployed to Vercel with zero configuration.
 
 No environment variables are required for the application to run. The following optional variable can be set:
 
-| Variable           | Description              | Required |
-|--------------------|--------------------------|----------|
-| `NEXT_PUBLIC_APP_URL` | Public URL of the deployed app | No |
+| Variable              | Description                    | Required |
+| --------------------- | ------------------------------ | -------- |
+| `NEXT_PUBLIC_APP_URL` | Public URL of the deployed app | No       |
 
 ### Demo URL
 

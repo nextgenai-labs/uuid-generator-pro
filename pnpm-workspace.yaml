@@ -1,6 +1,4 @@
 allowBuilds:
-  sharp: true
-  unrs-resolver: true
-
-overrides:
-  sharp: 0.35.3
+  sharp: false
+  unrs-resolver: false
+onlyBuiltDependencies: ''

@@ -3,18 +3,18 @@
 ## Development
 
 | Dependency | Minimum Version |
-|------------|-----------------|
+| ---------- | --------------- |
 | Node.js    | 20.x            |
 | pnpm       | 9.x             |
 
 ## Browser Support
 
-| Browser          | Supported |
-|------------------|-----------|
-| Chrome           | Latest 2 major versions |
-| Firefox          | Latest 2 major versions |
-| Safari           | Latest 2 major versions |
-| Edge             | Latest 2 major versions |
+| Browser | Supported               |
+| ------- | ----------------------- |
+| Chrome  | Latest 2 major versions |
+| Firefox | Latest 2 major versions |
+| Safari  | Latest 2 major versions |
+| Edge    | Latest 2 major versions |
 
 ## Hosting
 
