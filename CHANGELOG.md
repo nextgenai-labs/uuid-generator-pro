@@ -1,6 +1,41 @@
 # Changelog
 
-## 0.4.0 (Unreleased)
+All notable changes to this project are documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.5.0] — 2026-07-27
+
+### Added
+
+- Professional README with full feature overview, requirements, quick start, usage, project structure, browser support, and FAQ
+- Comprehensive INSTALL guide with troubleshooting section
+- FAQ.md — frequently asked questions
+- SUPPORT.md — support channels and response policy
+- CONTRIBUTING.md — contribution guidelines
+- CODE_OF_CONDUCT.md — contributor behavior standards
+- SECURITY.md — vulnerability reporting process
+- LICENSE — commercial use placeholder
+- `docs/marketplace/` — Codester marketplace listing assets
+  - `description.md` — product description copy
+  - `features.md` — detailed feature breakdown
+  - `requirements.md` — technical requirements
+  - `installation.md` — Marketplace-specific install guide
+  - `faq.md` — marketplace FAQ
+  - `release-notes.md` — version history for marketplace
+  - `support.md` — marketplace support policy
+  - `demo.md` — Vercel deployment guide
+- `docs/marketplace/assets/` — asset placeholders (banner, icon, screenshots)
+
+### Changed
+
+- Updated project version to 0.5.0
+- Updated all version references (`package.json`, `appVersion.ts`, headers, footers)
+- Replaced generic "All rights reserved" with commercial license placeholder
+- Converted CHANGELOG to Keep a Changelog format with release dates
+
+## [0.4.0] — 2026-07-27
 
 ### Added
 
@@ -17,7 +52,7 @@
 
 - Updated project version to 0.4.0
 
-## 0.3.0 (Unreleased)
+## [0.3.0] — 2026-07-27
 
 ### Added
 
@@ -43,7 +78,7 @@
 - Updated all buttons with consistent rounded-lg and transition durations
 - Updated project version to 0.3.0
 
-## 0.2.0 (Unreleased)
+## [0.2.0] — 2026-07-27
 
 ### Added
 
@@ -62,7 +97,7 @@
 - Replaced placeholder landing page with functional UUID generator
 - Updated project version to 0.2.0
 
-## 0.1.0 (Unreleased)
+## [0.1.0] — 2026-07-27
 
 ### Added
 

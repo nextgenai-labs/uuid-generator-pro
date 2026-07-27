@@ -1,3 +1,5 @@
-export const APP_VERSION = "0.4.0";
+import pkg from "../../package.json";
+
+export const APP_VERSION = pkg.version;
 export const APP_VERSION_LABEL = `Version ${APP_VERSION}`;
 export const APP_VERSION_SHORT = `v${APP_VERSION}`;
