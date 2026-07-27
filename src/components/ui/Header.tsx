@@ -1,6 +1,7 @@
 "use client";
 
 import { ThemeToggle } from "./ThemeToggle";
+import { APP_VERSION_SHORT } from "@/config/appVersion";
 
 export function Header() {
   return (
@@ -9,7 +10,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <h1 className="text-lg font-semibold tracking-tight">UUID Generator Pro</h1>
           <span className="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-700 dark:bg-blue-900 dark:text-blue-300">
-            v0.3.0
+            {APP_VERSION_SHORT}
           </span>
         </div>
         <ThemeToggle />
