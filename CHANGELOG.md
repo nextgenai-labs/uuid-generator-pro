@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.4.0 (Unreleased)
+
+### Added
+
+- Export UUIDs as TXT file download
+- Export UUIDs as CSV file download with header row
+- Meaningful filenames using date-based format (`uuids-YYYY-MM-DD`)
+- Reusable export utilities (`exportTxt`, `exportCsv`, `downloadFile`, `formatFilename`)
+- Clipboard fallback using `document.execCommand("copy")` when Clipboard API is unavailable
+- Duplicate generation click guard to prevent rapid-click issues
+- Export TXT and Export CSV buttons in results section
+- `ActionButton` reusable styling component
+
+### Changed
+
+- Updated project version to 0.4.0
+
 ## 0.3.0 (Unreleased)
 
 ### Added
