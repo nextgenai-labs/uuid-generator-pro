@@ -23,7 +23,7 @@ UUID Generator Pro can be deployed to any platform that supports Node.js applica
 - **Vercel** (recommended — zero-config deployment)
 - **Netlify**
 - **Railway**
-- **Digital Ocean App Platform**
+- **DigitalOcean App Platform**
 - **Any VPS or dedicated server** with Node.js
 
 ## Optional
