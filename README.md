@@ -36,6 +36,17 @@ Open [http://localhost:3000](http://localhost:3000).
 
 See [INSTALL.md](./INSTALL.md) for full setup and troubleshooting.
 
+## Tests
+
+Run the unit test suite (Vitest covers UUID generation format/version
+markers/uniqueness and filename conventions):
+
+```bash
+pnpm test
+```
+
+CI runs `pnpm lint`, `pnpm test`, and `pnpm build` on every push/PR.
+
 ## Usage
 
 1. **Select a UUID version** — Choose v1 (time-based), v4 (random), or v7 (Unix Epoch + random)
