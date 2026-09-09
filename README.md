@@ -1,5 +1,8 @@
 # UUID Generator Pro
 
+[![CI](https://github.com/nextgenai-labs/uuid-generator-pro/actions/workflows/ci.yml/badge.svg)](https://github.com/nextgenai-labs/uuid-generator-pro/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 > A fast, modern, and developer-friendly UUID generator built with Next.js and TypeScript. Generate UUID v1, v4, and v7 with bulk support, one-click clipboard copy, and TXT/CSV export.
 
 ---

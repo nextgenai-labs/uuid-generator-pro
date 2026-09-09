@@ -1,20 +1,38 @@
 # Contributing
 
-UUID Generator Pro is a commercial product. External contributions are not accepted at this time.
+Thanks for your interest in contributing to UUID Generator Pro.
 
-## Bug Reports
+## Setup
 
-If you have purchased UUID Generator Pro and found a bug, please open an issue on the [GitHub repository](https://github.com/nextgenai-labs/uuid-generator-pro/issues) with:
+Requires Node.js >= 18 and [pnpm](https://pnpm.io/).
 
-- A clear description of the issue
-- Steps to reproduce
-- Expected vs actual behavior
-- Browser and operating system versions
+```bash
+git clone https://github.com/nextgenai-labs/uuid-generator-pro.git
+cd uuid-generator-pro
+pnpm install
+```
 
-## Feature Requests
+## Quality gates
 
-Feature requests can be submitted through the GitHub issue tracker. While we review all suggestions, there is no guarantee that requested features will be implemented.
+```bash
+pnpm lint
+pnpm test
+pnpm build
+```
 
-## Security Issues
+All three run automatically in CI on every push/PR.
 
-Please refer to [SECURITY.md](./SECURITY.md) for reporting security vulnerabilities.
+## Process
+
+1. Branch from `main`: `feat/my-feature` or `fix/my-bug`.
+2. Add tests for new behavior in `src/` (Vitest).
+3. Run the quality gates above.
+4. Commit with a Conventional Commit message and open a PR.
+
+## PR checklist
+
+- [ ] `pnpm lint` passes
+- [ ] `pnpm test` passes
+- [ ] `pnpm build` passes
+- [ ] Tests added/updated
+- [ ] README updated if behavior changed

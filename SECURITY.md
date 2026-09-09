@@ -1,20 +1,13 @@
-# Security Policy
+# Security
 
-## Supported Versions
+## Reporting a vulnerability
 
-Only the latest release of UUID Generator Pro receives security updates.
+Please do **not** open a public issue for security problems. Report via a
+[private security advisory](https://github.com/nextgenai-labs/uuid-generator-pro/security/advisories)
+on GitHub. We aim to acknowledge reports within 3 business days.
 
-## Reporting a Vulnerability
+## Current posture
 
-If you discover a security vulnerability in UUID Generator Pro, please report it privately by contacting the maintainers through the Codester purchase page. This is the only private channel for initial disclosure.
-
-Please do not open a public GitHub issue for security vulnerabilities. After a report has been submitted and triaged, a public issue may be created by the maintainers for non-sensitive follow-up.
-
-Please do not disclose security vulnerabilities publicly until they have been addressed.
-
-## Process
-
-1. Report the vulnerability via the Codester purchase page.
-2. We will acknowledge receipt within 48 hours.
-3. We will investigate and provide a timeline for a fix.
-4. Once fixed, a new version will be released and the vulnerability will be disclosed responsibly.
+- The app is a client-side UUID generator; no user data is stored or uploaded.
+- No secrets are required to run, build, or test the application.
+- Keep dependency updates current — run `pnpm audit` before release.
